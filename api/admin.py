@@ -1,8 +1,5 @@
-"""Pending."""
 
 from django.contrib import admin
-from api.models import Post
+from .models import Task
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    """Admin View for Post"""
+admin.site.register(Task)
