@@ -9,6 +9,7 @@ from .models import Post, Product, Comment
 class PostAdmin(admin.ModelAdmin):
     list_display = [
         "title",
+        "id",
     ]
 
 
@@ -16,6 +17,7 @@ class PostAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
         "name",
+        "id",
     ]
 
 
@@ -23,4 +25,5 @@ class ProductAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = [
         "user",
+        "id",
     ]

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "apps.reviews",
 ]
 
@@ -88,6 +89,22 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+
+REST_FRAMEWORK = {
+    # "DEFAULT_AUTHENTICATION_CLASSES": [
+    #     "rest_framework_simplejwt.authentication.JWTAuthentication",
+    # ],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
+    "DEFAULT_CONTENT_LANGUAGE": "en",
+    "DEFAULT_FILTER_BACKENDS": [
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
+    "NUM_PROXIES": None,
+    "SEARCH_PARAM": "q",
+    "ORDERING_PARAM": "ordering",
+}
 
 
 STATIC_URL = "static/"
