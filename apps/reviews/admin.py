@@ -18,6 +18,12 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "id",
+        "width",
+        "height",
+    ]
+    readonly_fields = [
+        "width",
+        "height",
     ]
 
 

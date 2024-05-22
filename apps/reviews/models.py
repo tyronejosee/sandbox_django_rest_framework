@@ -30,6 +30,14 @@ class Product(models.Model):
         max_length=50, choices=Category.choices, default=Category.PENDING
     )
     stock = models.PositiveIntegerField()
+    image = models.ImageField(
+        upload_to="products/",
+        width_field="width",
+        height_field="height",
+        default="images/default.jpg",
+    )
+    width = models.PositiveIntegerField(editable=False, default=500)
+    height = models.PositiveIntegerField(editable=False, default=500)
     available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
