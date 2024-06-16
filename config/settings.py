@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "apps.reviews",
     "apps.hospital",
+    "apps.examples",
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ ROOT_URLCONF = "config.urls"
 
 MIGRATION_MODULES = {
     "hospital": "migrations.hospital",
+    "examples": "migrations.examples",
 }
 
 TEMPLATES = [
