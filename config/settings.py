@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "apps.reviews",
+    "apps.hospital",
 ]
 
 MIDDLEWARE = [
@@ -38,6 +39,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "config.urls"
+
+MIGRATION_MODULES = {
+    "hospital": "migrations.hospital",
+}
 
 TEMPLATES = [
     {
