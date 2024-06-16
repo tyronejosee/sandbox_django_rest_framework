@@ -27,6 +27,9 @@ class Patient(models.Model):
     height = models.FloatField()
     weight = models.FloatField()
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 class Doctor(models.Model):
     """Model definition for Doctor."""
@@ -35,6 +38,9 @@ class Doctor(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     specialty = models.CharField(max_length=25)
+
+    def __str__(self):
+        return f"Dr. {self.first_name} {self.last_name}"
 
 
 class Admission(models.Model):
@@ -47,9 +53,15 @@ class Admission(models.Model):
     diagnosis = models.CharField(max_length=50)
     attending_doctor_id = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.patient_id} by {self.attending_doctor_id}"
+
 
 class Province(models.Model):
     """Model definition for Province."""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     province_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.province_name

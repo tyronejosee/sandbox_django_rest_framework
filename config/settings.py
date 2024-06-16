@@ -2,11 +2,16 @@
 Django settings for config project.
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, "project_fixtures"),
+]
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-*&f9-&s631i&&d4*i)d1x7h@nv0mlzj#5l(3n286m#a*)!1xy="

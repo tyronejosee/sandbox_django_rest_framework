@@ -1,0 +1,11 @@
+[
+    {
+        "model": "hospital.doctor",
+        "pk": "1eaabefb-a6cb-4080-b7ae-99c5443632a3",
+        "fields": {
+            "first_name": "John",
+            "last_name": "Doe 2",
+            "specialty": "Cardiology 2"
+        }
+    }
+]
