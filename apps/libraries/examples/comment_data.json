@@ -1,0 +1,21 @@
+[
+    {
+        "id": 4,
+        "text": "Main Example",
+        "parent": null,
+        "children": [
+            {
+                "id": 5,
+                "text": "Child Example",
+                "parent": 4,
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "text": "Child Example",
+        "parent": 4,
+        "children": []
+    }
+]

@@ -6,7 +6,7 @@ from polymorphic.admin import (
     PolymorphicChildModelAdmin,
     PolymorphicChildModelFilter,
 )
-from .models import Animal, Dog, Cat
+from .models import Animal, Dog, Cat, Comment
 
 
 # django-polymorphic
@@ -28,3 +28,14 @@ class AnimalAdmin(PolymorphicParentModelAdmin):
 
 admin.site.register(Dog, DogAdmin)
 admin.site.register(Cat, CatAdmin)
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = (
+        "text",
+        "parent",
+    )
+    list_filter = ("parent",)
+    search_fields = ("text",)
+    ordering = ("id",)
