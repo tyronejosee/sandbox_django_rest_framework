@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "apps.reviews",
     "apps.hospital",
     "apps.examples",
+    "apps.libraries",
 ]
 
 MIDDLEWARE = [
