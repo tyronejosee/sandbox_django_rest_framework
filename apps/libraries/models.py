@@ -2,6 +2,7 @@
 
 from django.db import models
 from polymorphic.models import PolymorphicModel
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 # Test for django-polymorphic
@@ -48,3 +49,24 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+# Test for Django MPTT
+# https://django-mptt.readthedocs.io/en/latest/
+
+
+class Category(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="children",
+    )
+
+    class MPTTMeta:
+        order_insertion_by = ["name"]
+
+    def __str__(self) -> str:
+        return self.name

@@ -6,11 +6,14 @@ from polymorphic.admin import (
     PolymorphicChildModelAdmin,
     PolymorphicChildModelFilter,
 )
-from .models import Animal, Dog, Cat, Comment
+from mptt.admin import MPTTModelAdmin
+from .models import Animal, Dog, Cat, Comment, Category
 
 
 # django-polymorphic
 # https://django-polymorphic.readthedocs.io/en/stable/quickstart.html
+
+
 class DogAdmin(PolymorphicChildModelAdmin):
     base_model = Dog
 
@@ -39,3 +42,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ("parent",)
     search_fields = ("text",)
     ordering = ("id",)
+
+
+# Test for Django MPTT
+# https://django-mptt.readthedocs.io/en/latest/
+
+admin.site.register(Category, MPTTModelAdmin)

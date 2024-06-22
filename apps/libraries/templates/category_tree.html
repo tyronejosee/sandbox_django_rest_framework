@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Category Tree</title>
+  </head>
+  <body>
+    <h1>Category Tree</h1>
+    <ul>
+      {% for category in categories %} {% if not category.parent %}
+      <li>
+        {{ category.name }} {% include 'category_subtree.html' with
+        node=category %}
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </body>
+</html>

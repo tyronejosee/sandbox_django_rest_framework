@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "apps.hospital",
     "apps.examples",
     "apps.libraries",
+    "mptt",
 ]
 
 MIDDLEWARE = [

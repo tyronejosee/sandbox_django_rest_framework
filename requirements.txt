@@ -1,3 +1,4 @@
+django-mptt==0.16.0
 asgiref==3.8.1
 Django==5.0.6
 django-polymorphic==3.1.0

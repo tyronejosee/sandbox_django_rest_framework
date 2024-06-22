@@ -1,0 +1,7 @@
+<ul>
+  {% for child in node.get_children %}
+  <li>
+    {{ child.name }} {% include 'category_subtree.html' with node=child %}
+  </li>
+  {% endfor %}
+</ul>
