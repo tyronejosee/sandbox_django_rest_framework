@@ -29,11 +29,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'easy_thumbnails',
+    "easy_thumbnails",
     "apps.reviews",
     "apps.hospital",
     "apps.examples",
     "apps.libraries",
+    "apps.products",
     "mptt",
 ]
 
@@ -123,8 +124,8 @@ REST_FRAMEWORK = {
 
 
 THUMBNAIL_ALIASES = {
-    '': {
-        'avatar': {'size': (50, 50), 'crop': True},
+    "": {
+        "avatar": {"size": (50, 50), "crop": True},
     },
 }
 

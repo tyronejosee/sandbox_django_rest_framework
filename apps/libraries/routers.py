@@ -12,5 +12,5 @@ router.register(r"comments", CommentViewSet, basename="comment")
 
 urlpatterns = [
     path("api/", include(router.urls)),
-    path("categories/", category_tree_view),
+    path("api/categories/", category_tree_view),
 ]

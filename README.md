@@ -39,7 +39,14 @@ git commit -m "chore: tests for pre-commit hooks"
 Run isort (global)
 
 ```bash
-s
+isort .
+```
+
+Combine migrations
+
+```bash
+python manage.py squashmigrations products 0001_initial 0002_alter_product_description
+python manage.py migrate
 ```
 
 ## Favorites

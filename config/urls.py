@@ -12,6 +12,7 @@ urlpatterns = [
     # Apps urls
     path("", include("apps.reviews.routers")),
     path("", include("apps.libraries.routers")),
+    path("", include("apps.products.routers")),
 ]
 
 
