@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from .models import Post, Product, Comment
+from .models import Comment, Post, Product
 
 
 @admin.register(Post)

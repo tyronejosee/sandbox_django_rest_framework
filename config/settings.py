@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    'easy_thumbnails',
     "apps.reviews",
     "apps.hospital",
     "apps.examples",
@@ -120,6 +121,12 @@ REST_FRAMEWORK = {
     "ORDERING_PARAM": "ordering",
 }
 
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (50, 50), 'crop': True},
+    },
+}
 
 STATIC_URL = "static/"
 

@@ -1,11 +1,11 @@
 """ViewSets for Reviews App."""
 
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
-from .models import Post, Product, Comment
-from .serializers import PostSerializer, ProductSerializer, CommentSerializer
+from .models import Comment, Post, Product
+from .serializers import CommentSerializer, PostSerializer, ProductSerializer
 
 
 class PostViewSet(ModelViewSet):

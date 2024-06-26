@@ -5,7 +5,6 @@ from rest_framework_recursive.fields import RecursiveField
 
 from .models import Comment
 
-
 # Test for django-rest-framework-recursive
 # https://github.com/heywbj/django-rest-framework-recursive
 

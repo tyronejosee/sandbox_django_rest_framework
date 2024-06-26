@@ -36,6 +36,12 @@ git add .
 git commit -m "chore: tests for pre-commit hooks"
 ```
 
+Run isort (global)
+
+```bash
+s
+```
+
 ## Favorites
 
 - [x] Django MPTT

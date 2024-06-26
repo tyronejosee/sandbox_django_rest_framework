@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from .models import Patient, Doctor, Admission, Province
+from .models import Admission, Doctor, Patient, Province
 
 
 @admin.register(Patient)

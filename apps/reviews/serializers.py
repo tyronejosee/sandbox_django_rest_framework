@@ -1,9 +1,10 @@
 """Serializers for Reviews App."""
 
 import uuid
+
 from rest_framework import serializers
 
-from .models import Post, Product, Comment
+from .models import Comment, Post, Product
 
 
 class PostSerializer(serializers.ModelSerializer):

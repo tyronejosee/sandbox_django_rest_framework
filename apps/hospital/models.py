@@ -1,6 +1,7 @@
 """Models for Hospital App."""
 
 import uuid
+
 from django.db import models
 
 
