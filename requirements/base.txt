@@ -1,5 +1,4 @@
 asgiref==3.8.1
-black==24.4.2
 certifi==2024.7.4
 cfgv==3.4.0
 click==8.1.7
@@ -18,7 +17,6 @@ elastic-transport==8.13.1
 elasticsearch==8.14.0
 elasticsearch-dsl==8.14.0
 filelock==3.15.4
-flake8==7.1.0
 identify==2.5.36
 isort==5.13.2
 mccabe==0.7.0
@@ -28,12 +26,11 @@ packaging==24.1
 pathspec==0.12.1
 pillow==10.3.0
 platformdirs==4.2.2
-pre-commit==3.7.1
+
 pycodestyle==2.12.0
 pyflakes==3.2.0
 python-dateutil==2.9.0.post0
 PyYAML==6.0.1
-ruff==0.4.10
 six==1.16.0
 sqlparse==0.5.0
 typing_extensions==4.12.2

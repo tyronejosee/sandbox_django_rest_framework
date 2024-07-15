@@ -95,7 +95,10 @@ DATABASES = {
 }
 
 ELASTICSEARCH_DSL = {
-    "default": {"hosts": "localhost:9200"},
+    "default": {
+        "hosts": "http://localhost:9200",
+        "http_auth": ("elastic", "elasticpassword"),
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -146,5 +149,9 @@ THUMBNAIL_ALIASES = {
 }
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

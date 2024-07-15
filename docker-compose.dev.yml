@@ -4,7 +4,7 @@ services:
     container_name: sandbox_db
     restart: always
     environment:
-      POSTGRES_DB: sanbox_db
+      POSTGRES_DB: sandbox_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: sandboxpassword
     ports:
@@ -16,7 +16,7 @@ services:
     container_name: sandbox_web
     build:
       context: .
-      # dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
@@ -27,6 +27,8 @@ services:
     depends_on:
       - db
       - elasticsearch
+    environment:
+      - ELASTICSEARCH_DSL_HOSTS=http://elasticsearch:9200
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.8.0
@@ -34,6 +36,8 @@ services:
     environment:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ELASTIC_PASSWORD=elasticpassword
+      - xpack.security.enabled=true
     ulimits:
       memlock:
         soft: -1
@@ -41,7 +45,7 @@ services:
     volumes:
       - esdata:/usr/share/elasticsearch/data
     ports:
-      - "9210:9200"
+      - "9200:9200"
     networks:
       - elastic_network
 

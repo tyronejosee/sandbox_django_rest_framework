@@ -92,3 +92,12 @@ python manage.py migrate
 
 - [x] django-ckeditor
 - [x] Django MPTT
+
+## Elasticsearch Commands
+
+```bash
+
+python manage.py search_index --create
+python manage.py search_index --populate
+
+```

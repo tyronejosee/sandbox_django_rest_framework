@@ -4,7 +4,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from rest_framework_nested.routers import NestedSimpleRouter
 
-from .views import CategoryViewSet, ProductViewSet, ReviewViewSet
+from .views import CategoryViewSet, ProductSearchView, ProductViewSet, ReviewViewSet
 
 router = DefaultRouter()
 router.register(r"categories", CategoryViewSet, basename="category")
@@ -19,4 +19,8 @@ urlpatterns = [
     path("", include(router.urls)),
     path("", include(categories_router.urls)),
     path("", include(products_router.urls)),
+    path(
+        "api/products/search/",
+        ProductSearchView.as_view(),
+    ),
 ]
