@@ -1,0 +1,7 @@
+# Database
+psycopg==3.1.18
+psycopg2-binary==2.9.9
+
+# Code quality
+flake8==7.0.0
+pre-commit==3.6.2

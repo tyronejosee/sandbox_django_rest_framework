@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     "apps.examples",
     "apps.libraries",
     "apps.products",
+    "apps.models",
     "mptt",
+    "django_elasticsearch_dsl",
 ]
 
 MIDDLEWARE = [
@@ -74,13 +76,27 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "sandbox_db",
+        "USER": "postgres",
+        "PASSWORD": "sandboxpassword",
+        "HOST": "db",
+        "PORT": "5432",
     }
 }
 
+ELASTICSEARCH_DSL = {
+    "default": {"hosts": "localhost:9200"},
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
