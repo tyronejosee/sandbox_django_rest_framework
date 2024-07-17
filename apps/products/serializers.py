@@ -42,3 +42,17 @@ class CategorySerializer(serializers.ModelSerializer):
             "description",
             "products",
         ]
+
+
+class HistoricalProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product.history.model
+        fields = [
+            "id",
+            "name",
+            "description",
+            "price",
+            "history_date",
+            "history_user",
+            "history_type",
+        ]

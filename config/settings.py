@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "apps.models",
     "mptt",
     "django_elasticsearch_dsl",
+    "simple_history",
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -76,23 +78,23 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "sandbox_db",
-        "USER": "postgres",
-        "PASSWORD": "sandboxpassword",
-        "HOST": "db",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "sandbox_db",
+#         "USER": "postgres",
+#         "PASSWORD": "sandboxpassword",
+#         "HOST": "db",
+#         "PORT": "5432",
+#     }
+# }
 
 ELASTICSEARCH_DSL = {
     "default": {

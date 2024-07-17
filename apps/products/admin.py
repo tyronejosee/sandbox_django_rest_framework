@@ -1,6 +1,7 @@
 """Admin for Products App."""
 
 from django.contrib import admin
+from simple_history.admin import SimpleHistoryAdmin
 
 from .models import Category, Product, Review
 
@@ -12,8 +13,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ["name", "category", "price"]
+class ProductAdmin(SimpleHistoryAdmin):
+    list_display = ["name", "category", "price", "id"]
     search_fields = ["name", "category__name"]
     list_filter = ["category"]
 
