@@ -1,32 +1,34 @@
 """Views for Promotions App."""
 
 import re
-from django.db import transaction
+
 from django.core.cache import cache
+from django.db import transaction
 from django.shortcuts import get_object_or_404
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
 from drf_spectacular.utils import extend_schema_view
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from apps.users.permissions import IsMarketing
 from apps.utilities.pagination import LargeSetPagination
-from .models import Promotion, FixedCoupon, PercentageCoupon
+
+from .models import FixedCoupon, PercentageCoupon, Promotion
+from .schemas import (
+    fixed_coupon_detail_schema,
+    fixed_coupon_list_schema,
+    percentage_coupon_detail_schema,
+    percentage_coupon_list_schema,
+    promotion_detail_schema,
+    promotion_list_schema,
+)
 from .serializers import (
-    PromotionReadSerializer,
-    PromotionWriteSerializer,
     FixedCouponReadSerializer,
     FixedCouponWriteSerializer,
     PercentageCouponReadSerializer,
     PercentageCouponWriteSerializer,
-)
-from .schemas import (
-    promotion_list_schema,
-    promotion_detail_schema,
-    fixed_coupon_list_schema,
-    fixed_coupon_detail_schema,
-    percentage_coupon_list_schema,
-    percentage_coupon_detail_schema,
+    PromotionReadSerializer,
+    PromotionWriteSerializer,
 )
 
 
