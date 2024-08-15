@@ -1,38 +1,40 @@
 """Views for Restaurants App."""
 
 import re
-from django.db import transaction
+
 from django.contrib.contenttypes.models import ContentType
 from django.core.cache import cache
+from django.db import transaction
 from django.shortcuts import get_object_or_404
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from drf_spectacular.utils import extend_schema_view
 from rest_framework import status
 from rest_framework.permissions import AllowAny
-from drf_spectacular.utils import extend_schema_view
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from apps.orders.models import Order
 from apps.orders.serializers import OrderReadSerializer
 from apps.reviews.models import Review
 from apps.reviews.serializers import ReviewReadSerializer, ReviewWriteSerializer
-from apps.users.permissions import IsPartner, IsClient
+from apps.users.permissions import IsClient, IsPartner
 from apps.utilities.pagination import LargeSetPagination
-from .models import Restaurant, Category, Food
+
+from .models import Category, Food, Restaurant
+from .schemas import (
+    category_detail_schema,
+    category_list_schema,
+    food_detail_schema,
+    food_list_schema,
+    restaurant_detail_schema,
+    restaurant_list_schema,
+)
 from .serializers import (
-    RestaurantReadSerializer,
-    RestaurantWriteSerializer,
     CategoryReadSerializer,
     CategoryWriteSerializer,
     FoodReadSerializer,
     FoodWriteSerializer,
-)
-from .schemas import (
-    restaurant_list_schema,
-    restaurant_detail_schema,
-    category_list_schema,
-    category_detail_schema,
-    food_list_schema,
-    food_detail_schema,
+    RestaurantReadSerializer,
+    RestaurantWriteSerializer,
 )
 
 
